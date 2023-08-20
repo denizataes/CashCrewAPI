@@ -1,0 +1,29 @@
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{AF56EA51-4DF4-469D-821E-56A7296C4B82}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CashCrewAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Controllers/WeatherForecastController.cs" relfile="CashCrewAPI/Controllers/WeatherForecastController.cs" line="22" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="CashCrewAPI/Controllers/WeatherForecastController.cs" Line="34" Column="1" />
+      <File FileName="CashCrewAPI/WeatherForecast.cs" Line="9" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CashCrewAPI" expanded="True">
+            <Node name="CashCrewAPI" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
