@@ -1,0 +1,17 @@
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Services.deps.json
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Services.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Services.pdb
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Entities.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Repositories.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Repositories.pdb
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/bin/Debug/net6.0/Entities.pdb
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.csproj.AssemblyReference.cache
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.GeneratedMSBuildEditorConfig.editorconfig
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.AssemblyInfoInputs.cache
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.AssemblyInfo.cs
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.csproj.CoreCompileInputs.cache
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.csproj.CopyComplete
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/refint/Services.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/Services.pdb
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/obj/Debug/net6.0/ref/Services.dll
