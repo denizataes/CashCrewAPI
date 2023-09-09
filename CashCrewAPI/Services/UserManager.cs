@@ -8,10 +8,12 @@ namespace Services
     public class UserManager : IUserService
     {
         private readonly IRepositoryManager _manager;
+        private readonly ILoggerService _logger;
 
-        public UserManager(IRepositoryManager manager)
+        public UserManager(IRepositoryManager manager, ILoggerService logger)
         {
             _manager = manager;
+            _logger = logger;
         }
 
         public void CreateUser(User user)
@@ -26,8 +28,12 @@ namespace Services
         public void DeleteUser(User user)
         {
             var entity = _manager.User.GetUserByIdAsync(user.ID, false);
-            if(entity is null)
+            if (entity is null)
+            {
+                _logger.LogInfo("User does not exists.");
+                
                 throw new ArgumentNullException(nameof(user));
+            }
 
             _manager.User.DeleteUser(user);
             _manager.Save();

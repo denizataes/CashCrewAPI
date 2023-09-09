@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tZjXpCNNz92Vh46vnqTKSGO+BQuljeL/0TaHuShEv7s33FUfZEh74VY+L/y1eKz5S5h50u1PEQ+jCK9nXaYqrw==",
+  "dgSpecHash": "RIqsvjrVBzn5ZuHzduU+rlpPweAZze/8GpRNFYACc7iKD+q99VFqWs1C7eeShpuQ5FREaWB2L8lmalXbdqcajA==",
   "success": true,
   "projectFilePath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,8 @@
     "/Users/denizataes/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/nlog/5.2.4/nlog.5.2.4.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/nlog.extensions.logging/5.3.4/nlog.extensions.logging.5.3.4.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

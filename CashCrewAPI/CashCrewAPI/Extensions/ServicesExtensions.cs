@@ -42,6 +42,9 @@ namespace CashCrewAPI.Extensions
         {
             services.AddScoped<IUserService, UserManager>(); 
         }
+
+        public static void ConfigureLoggerService(this IServiceCollection services) =>
+    services.AddSingleton<ILoggerService, LoggerManager>();
     }
 }
 

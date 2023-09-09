@@ -49,3 +49,6 @@
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/Newtonsoft.Json.dll
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/Presentation.dll
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/Presentation.pdb
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/nlog.config
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/NLog.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/NLog.Extensions.Logging.dll

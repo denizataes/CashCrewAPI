@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0Ndz9y0nolNvD91ubfWqoN+BKHQV7qJgnbXDHResb+bkfB827VRb+6xhnlaKY0VvRcmTWZPT9v/l4Prruh3MFQ==",
+  "dgSpecHash": "L4C8sDVaHi44vCL2uFuBy/x5dswfjlydBK9InJOWkyXyAZmWuwj/T53w0Z8k68629EooIW182Q+dM0VTdp9hVw==",
   "success": true,
   "projectFilePath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Presentation/Presentation.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,8 @@
     "/Users/denizataes/.nuget/packages/microsoft.netcore.platforms/1.0.1/microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.netcore.targets/1.0.1/microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/nlog/5.2.4/nlog.5.2.4.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/nlog.extensions.logging/5.3.4/nlog.extensions.logging.5.3.4.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/runtime.native.system/4.0.0/runtime.native.system.4.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.appcontext/4.1.0/system.appcontext.4.1.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
