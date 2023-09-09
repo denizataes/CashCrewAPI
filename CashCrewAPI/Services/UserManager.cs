@@ -1,4 +1,5 @@
 ﻿using System;
+using Entities.Exceptions;
 using Entities.Models;
 using Repositories.Contracts;
 using Services.Contracts;
@@ -46,6 +47,11 @@ namespace Services
 
         public User GetUserById(int id, bool trackChanges)
         {
+            var user = _manager.User.GetUserByIdAsync(id, trackChanges);
+            if(user is null)
+            {
+                throw new UserNotFoundException(id);
+            }
             return _manager.User.GetUserByIdAsync(id, trackChanges);
         }
 

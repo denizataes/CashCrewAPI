@@ -3,10 +3,12 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using Services.Contracts;
+using WebApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+LogManager.Setup().LoadConfigurationFromFile(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
 // Add services to the container.
 
@@ -32,6 +34,10 @@ builder.Services.RegisterServices();
 builder.Services.ConfigureLoggerService();
 
 var app = builder.Build();
+
+var logger = app.Services.GetRequiredService<ILoggerService>();
+app.ConfigureExceptionHandler(logger); // For exception middleware
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
