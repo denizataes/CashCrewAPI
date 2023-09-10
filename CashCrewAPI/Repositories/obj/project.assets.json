@@ -835,7 +835,8 @@
     "net6.0": [
       "Entities >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.21",
-      "Microsoft.EntityFrameworkCore >= 6.0.21"
+      "Microsoft.EntityFrameworkCore >= 6.0.21",
+      "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -886,6 +887,10 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.21, )"
+          },
+          "Microsoft.Extensions.Configuration.Abstractions": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         },
         "imports": [

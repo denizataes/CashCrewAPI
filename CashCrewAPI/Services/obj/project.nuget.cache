@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "RIqsvjrVBzn5ZuHzduU+rlpPweAZze/8GpRNFYACc7iKD+q99VFqWs1C7eeShpuQ5FREaWB2L8lmalXbdqcajA==",
+  "dgSpecHash": "pChZR6cJXw8hXa+gWwXAQ25yk8nuQkQty+72PJdoVXKwK0Ig//efGiJtByzB61ZJUhtMQ9YMGOVB1YsKyqmAOQ==",
   "success": true,
   "projectFilePath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/Services.csproj",
   "expectedPackageFiles": [
+    "/Users/denizataes/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.21/microsoft.aspnetcore.cryptography.internal.6.0.21.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.21/microsoft.aspnetcore.cryptography.keyderivation.6.0.21.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.21/microsoft.aspnetcore.identity.entityframeworkcore.6.0.21.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.entityframeworkcore/6.0.21/microsoft.entityframeworkcore.6.0.21.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.21/microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.21/microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512",
@@ -22,8 +25,8 @@
     "/Users/denizataes/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "/Users/denizataes/.nuget/packages/nlog/5.2.4/nlog.5.2.4.nupkg.sha512",
-    "/Users/denizataes/.nuget/packages/nlog.extensions.logging/5.3.4/nlog.extensions.logging.5.3.4.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/nlog/5.2.3/nlog.5.2.3.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/nlog.extensions.logging/5.3.3/nlog.extensions.logging.5.3.3.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

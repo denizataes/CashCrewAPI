@@ -9,22 +9,15 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Repositories.EFCore
 {
-    public class RepositoryContext : IdentityDbContext<User>
+    public class RepositoryContext : DbContext
     {
         public RepositoryContext(DbContextOptions options) :
         base(options)
         {
 
         }
-        public DbSet<User> Books { get; set; }
-        
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            //modelBuilder.ApplyConfiguration(new BookConfig());
-            //modelBuilder.ApplyConfiguration(new RoleConfiguration());
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
+        public DbSet<User> Users { get; set; }
+       
     }
 }
 

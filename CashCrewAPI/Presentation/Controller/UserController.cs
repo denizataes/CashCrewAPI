@@ -1,6 +1,10 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
+using Entities.DataTransferObjects;
+
 namespace Presentation.Controller
 {
 	[Controller]
@@ -26,6 +30,14 @@ namespace Presentation.Controller
         {
             var users = _manager.UserService.GetUserById(id, false);
             return Ok(users);
+        }
+
+        [HttpPut("{id:int}")]
+        public IActionResult UpdateUser([FromRoute(Name = "id")] int id,
+            [FromBody] UserDtoForUpdate userDto)
+        {
+            _manager.UserService.UpdateUser(id, userDto, false);
+            return NoContent(); // 204
         }
     }
 }

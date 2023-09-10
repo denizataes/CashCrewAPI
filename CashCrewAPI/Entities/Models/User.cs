@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 namespace Entities.Models
 {
-    public class User: IdentityUser
+    public class User
     {
         public int ID { get; set; }
         public string FirstName { get; set; }

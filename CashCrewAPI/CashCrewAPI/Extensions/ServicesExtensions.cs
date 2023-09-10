@@ -13,19 +13,9 @@ namespace CashCrewAPI.Extensions
 {
     public static class ServicesExtensions
     {
-        public static void ConfigurePostgresContext(this IServiceCollection services, IConfiguration configuration) =>
-            services.AddDbContext<RepositoryContext>(options =>
-            {
-                var connectionString = configuration.GetConnectionString("PostgreSQLConnection");
-                var builder = new NpgsqlConnectionStringBuilder(connectionString)
-                {
-                    // PostgreSQL özel bağlantı ayarlarını burada yapabilirsiniz
-                    // Örneğin, SSL etkinleştirme:
-                    // SslMode = SslMode.Require
-                };
-
-                options.UseNpgsql(builder.ToString());
-            });
+        public static void ConfigurePostgresContext(this IServiceCollection services,
+            IConfiguration configuration) => services.AddDbContext<RepositoryContext>(options =>
+                    options.UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection")));
 
         public static void ConfigureRepositoryManager(this IServiceCollection services) =>
             services.AddScoped<IRepositoryManager, RepositoryManager>();
