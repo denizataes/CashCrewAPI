@@ -6,11 +6,11 @@ namespace Services.Contracts
 {
     public interface IUserService
     {
-        IEnumerable<User> GetAllUser(bool trackChanges);
-        User GetUserById(int id, bool trackChanges);
-        void CreateUser(User user);
+        IEnumerable<UserDto> GetAllUser(bool trackChanges);
+        UserDto GetUserById(int id, bool trackChanges);
+        UserDto CreateUser(UserDtoForInsertion user);
         void UpdateUser(int id, UserDtoForUpdate user, bool trackChanges);
-        void DeleteUser(User user);
+        void DeleteUser(int id);
     }
 }
 

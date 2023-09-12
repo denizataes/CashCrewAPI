@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JsvuXqiiN6/u7aB5LTaoKD8YxtQK9LuWlm28Ch4SFsXcfbp9LXp3pnFeIH3goL5fYWC2mmZO0WWuiGlImMrMTg==",
+  "dgSpecHash": "vcYBKLFHgOBhaJKRS888dwYom5j0TaMLjk+da3uPnWGTwPoMxAiRNBlTF6CzUMjmWevoMGHcSVLSV806lhWi6w==",
   "success": true,
   "projectFilePath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI.csproj",
   "expectedPackageFiles": [
@@ -20,8 +20,10 @@
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.21/microsoft.aspnetcore.identity.entityframeworkcore.6.0.21.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.jsonpatch/6.0.21/microsoft.aspnetcore.jsonpatch.6.0.21.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.mvc.abstractions/2.2.0/microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.mvc.core/2.2.5/microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/6.0.21/microsoft.aspnetcore.mvc.newtonsoftjson.6.0.21.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.responsecaching.abstractions/2.2.0/microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.routing/2.2.0/microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.aspnetcore.routing.abstractions/2.2.0/microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
@@ -55,6 +57,7 @@
     "/Users/denizataes/.nuget/packages/microsoft.netcore.targets/1.0.1/microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/nlog/5.2.4/nlog.5.2.4.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/nlog.extensions.logging/5.3.4/nlog.extensions.logging.5.3.4.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/npgsql/6.0.8/npgsql.6.0.8.nupkg.sha512",

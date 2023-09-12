@@ -23,53 +23,54 @@ namespace Services
             _mapper = mapper;
         }
 
-        public void CreateUser(User user)
+        public UserDto CreateUser(UserDtoForInsertion userDto)
         {
-            if (user is null)
-                throw new ArgumentNullException(nameof(user));
+            var entity = _mapper.Map<User>(userDto);
+            if (entity is null)
+                throw new ArgumentNullException(nameof(entity));
 
-            _manager.User.CreateUser(user);
+            _manager.User.CreateUser(entity);
             _manager.Save();
+            return _mapper.Map<UserDto>(entity);
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(int id)
         {
-            var entity = _manager.User.GetUserByIdAsync(user.ID, false);
+            var entity = _manager.User.GetUserByIdAsync(id, false);
             if (entity is null)
             {
                 _logger.LogInfo("User does not exists.");
-                
-                throw new ArgumentNullException(nameof(user));
+                throw new UserNotFoundException(id);
             }
 
-            _manager.User.DeleteUser(user);
+            _manager.User.DeleteUser(entity);
             _manager.Save();
         }
 
-        public IEnumerable<User> GetAllUser(bool trackChanges)
+        public IEnumerable<UserDto> GetAllUser(bool trackChanges)
         {
-            return _manager.User.GetAllUser(trackChanges);
+            var user = _manager.User.GetAllUser(trackChanges);
+            return _mapper.Map<IEnumerable<UserDto>>(user);
         }
 
-        public User GetUserById(int id, bool trackChanges)
+        public UserDto GetUserById(int id, bool trackChanges)
         {
             var user = _manager.User.GetUserByIdAsync(id, trackChanges);
             if(user is null)
             {
                 throw new UserNotFoundException(id);
             }
-            return _manager.User.GetUserByIdAsync(id, trackChanges);
+            return _mapper.Map<UserDto>(user);
         }
 
         public void UpdateUser(int id, UserDtoForUpdate userDto, bool trackChanges)
         {
-            var entity = GetUserById(id, trackChanges);
+            var entity = _manager.User.GetUserByIdAsync(id, false);
             if(entity is not null)
             {
-                entity = _mapper.Map(userDto, entity);
+                entity = _mapper.Map<User>(userDto);
                 _manager.User.Update(entity);
                 _manager.Save();
-
             }
             else
             {

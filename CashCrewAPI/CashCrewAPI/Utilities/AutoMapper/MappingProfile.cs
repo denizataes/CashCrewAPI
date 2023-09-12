@@ -9,6 +9,8 @@ namespace WebApi.Utilities.AutoMapper
         public MappingProfile()
         {
             CreateMap<UserDtoForUpdate, User>();
+            CreateMap<User, UserDto>();
+            CreateMap<UserDtoForInsertion, User>();
         }
     }
 }
