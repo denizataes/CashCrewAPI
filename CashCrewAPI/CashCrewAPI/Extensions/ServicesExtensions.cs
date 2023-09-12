@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
+using Presentation.ActionFilters;
 
 namespace CashCrewAPI.Extensions
 {
@@ -31,6 +32,11 @@ namespace CashCrewAPI.Extensions
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IUserService, UserManager>(); 
+        }
+        public static void ConfigureActionFilters(this IServiceCollection services)
+        {
+            services.AddScoped<ValidationFilterAttribute>();
+            services.AddSingleton<LogFilterAttribute>();
         }
 
         public static void ConfigureLoggerService(this IServiceCollection services) =>

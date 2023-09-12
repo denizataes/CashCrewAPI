@@ -36,13 +36,7 @@ namespace Services
 
         public async Task DeleteUserAsync(int id)
         {
-            var entity = await _manager.User.GetUserByIdAsync(id, false);
-            if (entity is null)
-            {
-                _logger.LogInfo("User does not exists.");
-                throw new UserNotFoundException(id);
-            }
-
+            var entity = await GetUserByIdAndCheckExists(id, false);
             _manager.User.DeleteUser(entity);
             await _manager.SaveAsync();
         }
@@ -55,12 +49,8 @@ namespace Services
 
         public async Task<UserDto> GetUserByIdAsync(int id, bool trackChanges)
         {
-            var user = await _manager.User.GetUserByIdAsync(id, trackChanges);
-            if(user is null)
-            {
-                throw new UserNotFoundException(id);
-            }
-            return _mapper.Map<UserDto>(user);
+            var entity = await GetUserByIdAndCheckExists(id, false);
+            return _mapper.Map<UserDto>(entity);
         }
 
         public async Task UpdateUserAsync(int id, UserDtoForUpdate userDto, bool trackChanges)
@@ -76,6 +66,17 @@ namespace Services
             {
                 throw new UserNotFoundException(id);
             }
+        }
+
+        private async Task<User> GetUserByIdAndCheckExists(int id, bool trackChanges)
+        {
+            // check entity 
+            var entity = await _manager.User.GetUserByIdAsync(id, trackChanges);
+
+            if (entity is null)
+                throw new UserNotFoundException(id);
+
+            return entity;
         }
     }
 }

@@ -11,12 +11,14 @@
     <None Remove="ErrorModel\" />
     <None Remove="Exceptions\" />
     <None Remove="DataTransferObjects\" />
+    <None Remove="LogModel\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ErrorModel\" />
     <Folder Include="Exceptions\" />
     <Folder Include="DataTransferObjects\" />
+    <Folder Include="LogModel\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />

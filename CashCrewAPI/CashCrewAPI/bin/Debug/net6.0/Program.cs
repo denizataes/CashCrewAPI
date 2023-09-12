@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using NLog;
 using Services.Contracts;
 using WebApi.Extensions;
+using Presentation.ActionFilters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +33,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
-
+builder.Services.AddScoped<ValidationFilterAttribute>();
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.ConfigureSwagger();
 builder.Services.ConfigurePostgresContext(builder.Configuration);
@@ -41,9 +42,10 @@ builder.Services.ConfigureServiceManager();
 builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
 builder.Services.ConfigureLoggerService();
+builder.Services.ConfigureActionFilters();
 
 
-    
+
 var app = builder.Build();
 
 var logger = app.Services.GetRequiredService<ILoggerService>();

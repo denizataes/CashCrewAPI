@@ -12,9 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controller\" />
+    <None Remove="ActionFilters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
+    <Folder Include="ActionFilters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Services\Services.csproj" />

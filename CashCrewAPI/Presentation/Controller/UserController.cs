@@ -4,10 +4,12 @@ using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Entities.DataTransferObjects;
+using Presentation.ActionFilters;
 
 namespace Presentation.Controller
 {
-	[ApiController]
+    [ServiceFilter(typeof(LogFilterAttribute))]
+    [ApiController]
 	[Route("api/users")]
     public class UserController : ControllerBase
     {
@@ -32,22 +34,18 @@ namespace Presentation.Controller
             return Ok(users);
         }
 
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateUserAsync([FromRoute(Name = "id")] int id,
             [FromBody] UserDtoForUpdate userDto)
         {
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
             await _manager.UserService.UpdateUserAsync(id, userDto, false);
             return NoContent(); // 204
         }
-
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserDtoForInsertion userDto)
         {
-            if (!ModelState.IsValid)
-                return UnprocessableEntity(ModelState);
-
             var user = await _manager.UserService.CreateUserAsync(userDto);
             return StatusCode(201, user); // CreatedAtRoute()
         }
