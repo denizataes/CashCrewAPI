@@ -19,43 +19,43 @@ namespace Presentation.Controller
         }
 
         [HttpGet]
-        public IActionResult GetAllUser()
+        public async Task<IActionResult> GetAllUser()
         {
-            var users = _manager.UserService.GetAllUser(false);
+            var users = await _manager.UserService.GetAllUserAsync(false);
             return Ok(users);
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult GetUserById([FromRoute] int id)
+        public async Task<IActionResult> GetUserById([FromRoute] int id)
         {
-            var users = _manager.UserService.GetUserById(id, false);
+            var users = await _manager.UserService.GetUserByIdAsync(id, false);
             return Ok(users);
         }
 
         [HttpPut("{id:int}")]
-        public IActionResult UpdateUser([FromRoute(Name = "id")] int id,
+        public async Task<IActionResult> UpdateUserAsync([FromRoute(Name = "id")] int id,
             [FromBody] UserDtoForUpdate userDto)
         {
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
-            _manager.UserService.UpdateUser(id, userDto, false);
+            await _manager.UserService.UpdateUserAsync(id, userDto, false);
             return NoContent(); // 204
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserDtoForInsertion userDto)
+        public async Task<IActionResult> CreateUser([FromBody] UserDtoForInsertion userDto)
         {
             if (!ModelState.IsValid)
                 return UnprocessableEntity(ModelState);
 
-            var user = _manager.UserService.CreateUser(userDto);
+            var user = await _manager.UserService.CreateUserAsync(userDto);
             return StatusCode(201, user); // CreatedAtRoute()
         }
 
         [HttpDelete("{id:int}")]
-        public IActionResult DeleteUser([FromRoute(Name = "id")] int id)
+        public async Task<IActionResult> DeleteUser([FromRoute(Name = "id")] int id)
         {
-            _manager.UserService.DeleteUser(id);
+            await _manager.UserService.DeleteUserAsync(id);
             return Ok();
         }
 

@@ -15,10 +15,13 @@ namespace Repositories.EFCore
 
         public void DeleteUser(User user) => Delete(user);
 
-        public IEnumerable<User> GetAllUser(bool trackChanges) => FindAll(false);
+        public async Task<IEnumerable<User>> GetAllUserAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
+            .ToListAsync();
 
-        public User GetUserByIdAsync(int id, bool trackChanges) => FindByCondition(b => b.ID.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<User> GetUserByIdAsync(int id, bool trackChanges) =>
+            await FindByCondition(b => b.ID.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 
         public void UpdateUser(User user) => Update(user);
     }

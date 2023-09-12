@@ -57,3 +57,6 @@
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/obj/Debug/net6.0/CashCrewAPI.pdb
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/obj/Debug/net6.0/CashCrewAPI.genruntimeconfig.cache
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/obj/Debug/net6.0/ref/CashCrewAPI.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll

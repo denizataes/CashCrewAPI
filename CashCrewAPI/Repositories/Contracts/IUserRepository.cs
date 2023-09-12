@@ -7,8 +7,8 @@ namespace Repositories.Contracts
     {
         //Task<PagedList<User>> GetAllBooksAsync(BookParameters bookParameters,
         //bool trackChanges);
-        IEnumerable<User> GetAllUser(bool trackChanges);
-        User GetUserByIdAsync(int id, bool trackChanges);
+        Task<IEnumerable<User>> GetAllUserAsync(bool trackChanges);
+        Task<User> GetUserByIdAsync(int id, bool trackChanges);
         void CreateUser(User user);
         void UpdateUser(User user);
         void DeleteUser(User user);
