@@ -43,7 +43,7 @@ builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureActionFilters();
-
+builder.Services.ConfigureCors();
 
 
 var app = builder.Build();
@@ -65,6 +65,8 @@ if (app.Environment.IsProduction())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 

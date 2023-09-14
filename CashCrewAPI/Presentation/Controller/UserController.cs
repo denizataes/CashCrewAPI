@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 using Entities.DataTransferObjects;
 using Presentation.ActionFilters;
+using Entities.RequestFeatures;
+using System.Text.Json;
 
 namespace Presentation.Controller
 {
@@ -21,10 +23,14 @@ namespace Presentation.Controller
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllUser()
+        public async Task<IActionResult> GetAllUser([FromQuery] UserParameters userParameters)
         {
-            var users = await _manager.UserService.GetAllUserAsync(false);
-            return Ok(users);
+            var pagedResult = await _manager
+                .UserService
+                .GetAllUserAsync(userParameters,false);
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+            return Ok(pagedResult.users);
         }
 
         [HttpGet("{id:int}")]

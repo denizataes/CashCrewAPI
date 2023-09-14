@@ -1,5 +1,6 @@
 ﻿using System;
 using Entities.Models;
+using Entities.RequestFeatures;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
 
@@ -15,9 +16,18 @@ namespace Repositories.EFCore
 
         public void DeleteUser(User user) => Delete(user);
 
-        public async Task<IEnumerable<User>> GetAllUserAsync(bool trackChanges) =>
-            await FindAll(trackChanges)
+        public async Task<PagedList<User>> GetAllUserAsync(UserParameters userParameters,
+            bool trackChanges)
+        {
+            var user = await FindAll(trackChanges)
+            .OrderBy(b => b.ID)
             .ToListAsync();
+
+            return PagedList<User>
+                .ToPagedList(user,
+                userParameters.PageNumber,
+                userParameters.PageSize);
+        }
 
         public async Task<User> GetUserByIdAsync(int id, bool trackChanges) =>
             await FindByCondition(b => b.ID.Equals(id), trackChanges)

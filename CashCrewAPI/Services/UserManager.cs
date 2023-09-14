@@ -3,6 +3,7 @@ using AutoMapper;
 using Entities.DataTransferObjects;
 using Entities.Exceptions;
 using Entities.Models;
+using Entities.RequestFeatures;
 using Repositories.Contracts;
 using Services.Contracts;
 
@@ -41,10 +42,11 @@ namespace Services
             await _manager.SaveAsync();
         }
 
-        public async Task<IEnumerable<UserDto>> GetAllUserAsync(bool trackChanges)
+        public async Task<(IEnumerable<UserDto> users, MetaData metaData)> GetAllUserAsync(UserParameters userParameters ,bool trackChanges)
         {
-            var user = await _manager.User.GetAllUserAsync(trackChanges);
-            return _mapper.Map<IEnumerable<UserDto>>(user);
+            var usersWithMetaData = await _manager.User.GetAllUserAsync(userParameters, trackChanges);
+            var usersDto =  _mapper.Map<IEnumerable<UserDto>>(usersWithMetaData);
+            return (usersDto, usersWithMetaData.MetaData);
         }
 
         public async Task<UserDto> GetUserByIdAsync(int id, bool trackChanges)

@@ -387,3 +387,19 @@
 2023-09-13 00:02:13.0343 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.4.2092. Product version: 5.2.4+5ed75b125a691ce9f01e64641f1a79f438385847. GlobalAssemblyCache: False
 2023-09-13 00:02:13.0950 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/nlog.config
 2023-09-13 00:02:13.1025 Info Configuration initialized.
+2023-09-14 23:26:59.4283 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-09-14 23:26:59.4571 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.4.2092. Product version: 5.2.4+5ed75b125a691ce9f01e64641f1a79f438385847. GlobalAssemblyCache: False
+2023-09-14 23:26:59.5188 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/nlog.config
+2023-09-14 23:26:59.5270 Info Configuration initialized.
+2023-09-14 23:28:29.8645 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-09-14 23:28:29.8934 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.4.2092. Product version: 5.2.4+5ed75b125a691ce9f01e64641f1a79f438385847. GlobalAssemblyCache: False
+2023-09-14 23:28:29.9667 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/nlog.config
+2023-09-14 23:28:29.9749 Info Configuration initialized.
+2023-09-14 23:48:32.2798 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-09-14 23:48:32.3066 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.4.2092. Product version: 5.2.4+5ed75b125a691ce9f01e64641f1a79f438385847. GlobalAssemblyCache: False
+2023-09-14 23:48:32.3667 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/nlog.config
+2023-09-14 23:48:32.3742 Info Configuration initialized.
+2023-09-14 23:54:01.6182 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-09-14 23:54:01.6472 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.4.2092. Product version: 5.2.4+5ed75b125a691ce9f01e64641f1a79f438385847. GlobalAssemblyCache: False
+2023-09-14 23:54:01.7053 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/nlog.config
+2023-09-14 23:54:01.7127 Info Configuration initialized.
