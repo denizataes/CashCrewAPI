@@ -3,6 +3,7 @@ using Entities.Models;
 using Entities.RequestFeatures;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
+using Repositories.Extensions;
 
 namespace Repositories.EFCore
 {
@@ -20,6 +21,7 @@ namespace Repositories.EFCore
             bool trackChanges)
         {
             var user = await FindAll(trackChanges)
+            .Search(userParameters.SearchTerm)
             .OrderBy(b => b.ID)
             .ToListAsync();
 

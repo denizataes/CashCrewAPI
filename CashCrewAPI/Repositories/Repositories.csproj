@@ -10,11 +10,13 @@
     <None Remove="Contracts\" />
     <None Remove="EFCore\" />
     <None Remove="Config\" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
     <Folder Include="EFCore\" />
     <Folder Include="Config\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />

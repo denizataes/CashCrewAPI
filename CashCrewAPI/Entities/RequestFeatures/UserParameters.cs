@@ -3,6 +3,7 @@ namespace Entities.RequestFeatures
 {
     public class UserParameters : RequestParameters
     {
+        public String? SearchTerm { get; set; }
 
     }
 }
