@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pChZR6cJXw8hXa+gWwXAQ25yk8nuQkQty+72PJdoVXKwK0Ig//efGiJtByzB61ZJUhtMQ9YMGOVB1YsKyqmAOQ==",
+  "dgSpecHash": "fn609KwPNjAkQehhhQSXroSo3jfOY+qNdOkKLlDzgPDBhsW+6JSBK9+ghV2KhkeNwf3YrMTR4XX1Xh4go9DdoA==",
   "success": true,
   "projectFilePath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "/Users/denizataes/.nuget/packages/nlog.extensions.logging/5.3.3/nlog.extensions.logging.5.3.3.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "/Users/denizataes/.nuget/packages/system.linq.dynamic.core/1.3.5/system.linq.dynamic.core.1.3.5.nupkg.sha512",
     "/Users/denizataes/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

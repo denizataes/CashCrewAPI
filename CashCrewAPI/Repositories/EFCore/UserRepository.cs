@@ -22,7 +22,7 @@ namespace Repositories.EFCore
         {
             var user = await FindAll(trackChanges)
             .Search(userParameters.SearchTerm)
-            .OrderBy(b => b.ID)
+            .Sort(userParameters.OrderBy)
             .ToListAsync();
 
             return PagedList<User>

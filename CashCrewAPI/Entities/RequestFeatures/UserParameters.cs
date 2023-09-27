@@ -5,6 +5,11 @@ namespace Entities.RequestFeatures
     {
         public String? SearchTerm { get; set; }
 
+        public UserParameters()
+        {
+            OrderBy = "id";
+        }
+
     }
 }
 
