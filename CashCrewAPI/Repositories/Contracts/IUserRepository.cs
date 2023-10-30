@@ -10,6 +10,7 @@ namespace Repositories.Contracts
         //bool trackChanges);
         Task<PagedList<User>> GetAllUserAsync(UserParameters userParameters, bool trackChanges);
         Task<User> GetUserByIdAsync(int id, bool trackChanges);
+        Task<User> GetUserByUsernameAsync(string username, bool trackChanges);
         void CreateUser(User user);
         void UpdateUser(User user);
         void DeleteUser(User user);

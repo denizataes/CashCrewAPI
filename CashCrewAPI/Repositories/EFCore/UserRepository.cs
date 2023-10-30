@@ -35,6 +35,10 @@ namespace Repositories.EFCore
             await FindByCondition(b => b.ID.Equals(id), trackChanges)
             .SingleOrDefaultAsync();
 
+        public async Task<User> GetUserByUsernameAsync(string username, bool trackChanges) =>
+    await FindByCondition(b => b.Username.Equals(username), trackChanges)
+    .SingleOrDefaultAsync();
+
         public void UpdateUser(User user) => Update(user);
     }
 }

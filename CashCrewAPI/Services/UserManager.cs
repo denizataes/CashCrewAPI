@@ -6,6 +6,7 @@ using Entities.Models;
 using Entities.RequestFeatures;
 using Repositories.Contracts;
 using Services.Contracts;
+using Services.Util;
 
 namespace Services
 {
@@ -29,6 +30,12 @@ namespace Services
             var entity = _mapper.Map<User>(userDto);
             if (entity is null)
                 throw new ArgumentNullException(nameof(entity));
+
+            var existingUser = await GetUserByUsernameAsync(userDto.Username, false);
+            if (existingUser is not null)
+                throw new UserAlreadyExistException();
+
+            entity.Password = Encryption.EncryptPassword(entity.Password, entity.Username);
 
             _manager.User.CreateUser(entity);
             await _manager.SaveAsync();
@@ -55,6 +62,12 @@ namespace Services
             return _mapper.Map<UserDto>(entity);
         }
 
+        public async Task<UserDto> GetUserByUsernameAsync(string username, bool trackChanges)
+        {
+            var entity = await _manager.User.GetUserByUsernameAsync(username, trackChanges);
+            return _mapper.Map<UserDto>(entity);
+        }
+
         public async Task UpdateUserAsync(int id, UserDtoForUpdate userDto, bool trackChanges)
         {
             var entity = await _manager.User.GetUserByIdAsync(id, false);
@@ -70,6 +83,19 @@ namespace Services
             }
         }
 
+        public async Task<bool> ValidateCredentialsAsync(string username, string password)
+        {
+            var user = await GetUserByUsernameAsync(username, false);
+
+            if(user is not null)
+            {
+                if (Encryption.Decrypt(user.Password, username).Equals(password))
+                    return true;
+            }
+            return false;
+
+        }
+
         private async Task<User> GetUserByIdAndCheckExists(int id, bool trackChanges)
         {
             // check entity 
@@ -80,6 +106,7 @@ namespace Services
 
             return entity;
         }
+
     }
 }
 

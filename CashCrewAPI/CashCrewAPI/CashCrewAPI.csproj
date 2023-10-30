@@ -20,6 +20,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="IdentityServer4" Version="2.2.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,12 +29,18 @@
     <None Remove="Utilities\" />
     <None Remove="Utilities\AutoMapper\" />
     <None Remove="ContextFactory\" />
+    <None Remove="Assets\" />
+    <None Remove="Assets\Certificates\" />
+    <None Remove="Runtime\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Utilities\" />
     <Folder Include="Utilities\AutoMapper\" />
     <Folder Include="ContextFactory\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Certificates\" />
+    <Folder Include="Runtime\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repositories\Repositories.csproj">

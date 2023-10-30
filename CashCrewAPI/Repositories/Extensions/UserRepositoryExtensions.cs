@@ -15,8 +15,8 @@ namespace Repositories.Extensions
 			var lowerCaseTerm = searchTerm.Trim().ToLower();
 
 			return users
-				.Where(b => b.FirstName.ToLower().Contains(searchTerm) ||
-                b.LastName.ToLower().Contains(searchTerm));
+				.Where(b => b.Username.ToLower().Contains(searchTerm) ||
+                b.Username.ToLower().Contains(searchTerm));
 		}
 
         public static IQueryable<User> Sort(this IQueryable<User> books,

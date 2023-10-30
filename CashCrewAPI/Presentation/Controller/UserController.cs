@@ -23,6 +23,7 @@ namespace Presentation.Controller
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllUser([FromQuery] UserParameters userParameters)
         {
             var pagedResult = await _manager
@@ -39,6 +40,14 @@ namespace Presentation.Controller
             var users = await _manager.UserService.GetUserByIdAsync(id, false);
             return Ok(users);
         }
+
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetUserByUsername([FromRoute(Name = "username")] string username)
+        {
+            var users = await _manager.UserService.GetUserByUsernameAsync(username, false);
+            return Ok(users);
+        }
+
 
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut("{id:int}")]
@@ -57,6 +66,7 @@ namespace Presentation.Controller
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> DeleteUser([FromRoute(Name = "id")] int id)
         {
             await _manager.UserService.DeleteUserAsync(id);

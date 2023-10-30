@@ -29,15 +29,11 @@ namespace CashCrewAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("IBAN")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -45,45 +41,13 @@ namespace CashCrewAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("ID");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Entities.Models.UserPasswordAssociation", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Password")
+                    b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("integer");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("UserID");
-
-                    b.ToTable("UserPasswordAssociation");
-                });
-
-            modelBuilder.Entity("Entities.Models.UserPasswordAssociation", b =>
-                {
-                    b.HasOne("Entities.Models.User", null)
-                        .WithMany("PasswordAssociations")
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Entities.Models.User", b =>
-                {
-                    b.Navigation("PasswordAssociations");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

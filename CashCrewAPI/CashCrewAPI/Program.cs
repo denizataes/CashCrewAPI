@@ -6,11 +6,21 @@ using NLog;
 using Services.Contracts;
 using WebApi.Extensions;
 using Presentation.ActionFilters;
+using Microsoft.JSInterop;
+using CashCrewAPI.Runtime.Auth.Config;
+using CashCrewAPI.Runtime.Auth.Store;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.Extensions.Hosting;
+using IdentityServer4;
+using IdentityServer4.AccessTokenValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
 LogManager.Setup().LoadConfigurationFromFile(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 Console.Write(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
 // Add services to the container.
 
@@ -45,6 +55,28 @@ builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureActionFilters();
 builder.Services.ConfigureCors();
 
+// IdentityServer  nad Authentication
+var secretForIntrospectionEndpoint = builder.Configuration["AppSettings:SecretForIntrospectionEndpoint"];
+
+var auth = builder.Services.AddIdentityServer();
+auth.AddDeveloperSigningCredential();
+//auth.AddSigningCredential(new X509Certificate2(Path.Combine(Environment.CurrentDirectory, "Assets/Certificates", "AuthSigningCredential.pfx"), "", X509KeyStorageFlags.MachineKeySet));
+auth.AddResourceOwnerValidator<CashCrewAPI.Runtime.Validators.ValidationFilterAttribute>();
+auth.AddInMemoryApiResources(ApiResourceConfig.GetApiResources(secretForIntrospectionEndpoint));
+auth.AddClientStore<AuthClientStore>();
+auth.AddCorsPolicyService<CashCrewAPI.Runtime.Services.CorsPolicyAllowAllService>();
+
+builder.Services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme).AddIdentityServerAuthentication(options =>
+{
+    options.Authority = builder.Configuration["AppSettings:AuthorityUrl"];
+    options.RequireHttpsMetadata = false;
+    options.ApiName = "auth.api";
+
+    options.JwtBearerEvents = new JwtBearerEvents { OnTokenValidated = OnTokenValidated, OnAuthenticationFailed = OnAuthenticationFailed };
+});
+
+//
+
 
 var app = builder.Build();
 
@@ -68,9 +100,24 @@ app.UseHttpsRedirection();
 
 app.UseCors("CorsPolicy");
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseIdentityServer();
+
+
 app.Run();
 
+
+static Task OnTokenValidated(TokenValidatedContext tokenValidatedContext)
+{
+    return Task.CompletedTask;
+}
+
+static Task OnAuthenticationFailed(AuthenticationFailedContext arg)
+{
+    return Task.CompletedTask;
+}

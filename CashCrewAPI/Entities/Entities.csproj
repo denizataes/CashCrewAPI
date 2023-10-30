@@ -13,6 +13,8 @@
     <None Remove="DataTransferObjects\" />
     <None Remove="LogModel\" />
     <None Remove="RequestFeatures\" />
+    <None Remove="DataTransferObjects\Login\" />
+    <None Remove="DataTransferObjects\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -21,6 +23,8 @@
     <Folder Include="DataTransferObjects\" />
     <Folder Include="LogModel\" />
     <Folder Include="RequestFeatures\" />
+    <Folder Include="DataTransferObjects\Login\" />
+    <Folder Include="DataTransferObjects\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />

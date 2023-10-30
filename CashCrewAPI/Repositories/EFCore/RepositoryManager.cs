@@ -19,6 +19,8 @@ namespace Repositories.EFCore
 
         public IUserRepository User => _userRepository;
 
+        public ILoginRepository Login => throw new NotImplementedException();
+
         public async Task SaveAsync()
         {
             await _context.SaveChangesAsync();

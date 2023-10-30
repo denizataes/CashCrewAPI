@@ -31,7 +31,8 @@ namespace CashCrewAPI.Extensions
 
         public static void RegisterServices(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserManager>(); 
+            services.AddScoped<IUserService, UserManager>();
+            services.AddScoped<ILoginService, LoginManager>();
         }
         public static void ConfigureActionFilters(this IServiceCollection services)
         {

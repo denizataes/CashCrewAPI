@@ -1,9 +1,9 @@
 ﻿namespace Entities.Exceptions
 {
-    public sealed class UserNotFoundException : NotFoundException
+    public sealed class UserAlreadyExistException : NotFoundException
     {
-        public UserNotFoundException(int id)
-            : base($"The user with id : {id} could not found.")
+        public UserAlreadyExistException()
+            : base($"There is another user with this username. Enter another username.")
         {
         }
     }

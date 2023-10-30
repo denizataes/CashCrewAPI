@@ -12,12 +12,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Contracts\" />
+    <None Remove="Util\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NLog.Extensions.Logging" Version="5.3.3" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="JObject" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
