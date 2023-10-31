@@ -17,7 +17,8 @@ namespace Repositories.EFCore
 
         }
         public DbSet<User> Users { get; set; }
-       
+        public DbSet<Vacation> Vacations { get; set; }
+
     }
 }
 

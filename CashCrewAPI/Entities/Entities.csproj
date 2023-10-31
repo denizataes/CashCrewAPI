@@ -15,6 +15,7 @@
     <None Remove="RequestFeatures\" />
     <None Remove="DataTransferObjects\Login\" />
     <None Remove="DataTransferObjects\User\" />
+    <None Remove="DataTransferObjects\Vacation\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -25,6 +26,7 @@
     <Folder Include="RequestFeatures\" />
     <Folder Include="DataTransferObjects\Login\" />
     <Folder Include="DataTransferObjects\User\" />
+    <Folder Include="DataTransferObjects\Vacation\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />

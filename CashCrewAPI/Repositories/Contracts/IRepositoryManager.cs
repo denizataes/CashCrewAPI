@@ -5,6 +5,7 @@ namespace Repositories.Contracts
     {
         IUserRepository User { get; }
         ILoginRepository Login { get; }
+        IVacationRepository Vacation { get; }
         Task SaveAsync();
     }
 }

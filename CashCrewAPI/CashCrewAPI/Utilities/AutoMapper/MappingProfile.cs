@@ -11,6 +11,11 @@ namespace WebApi.Utilities.AutoMapper
             CreateMap<UserDtoForUpdate, User>();
             CreateMap<User, UserDto>();
             CreateMap<UserDtoForInsertion, User>();
+
+
+            CreateMap<Vacation, VacationDto>();
+            CreateMap<VacationDto, Vacation>();
+
         }
     }
 }

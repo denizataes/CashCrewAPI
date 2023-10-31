@@ -5,6 +5,7 @@ namespace Services.Contracts
     {
         IUserService UserService { get; }
         ILoginService LoginService { get; }
+        IVacationService VacationService { get; }
     }
 }
 

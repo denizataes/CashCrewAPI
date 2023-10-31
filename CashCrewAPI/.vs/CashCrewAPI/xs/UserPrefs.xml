@@ -2,81 +2,110 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Repositories/EFCore/RepositoryManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Models/User.cs">
     <Files>
-      <File FileName="CashCrewAPI/Properties/launchSettings.json" />
-      <File FileName="CashCrewAPI/appsettings.json" />
-      <File FileName="CashCrewAPI/Program.cs" Line="75" Column="19" />
-      <File FileName="Entities/Models/User.cs" Line="5" Column="23" />
-      <File FileName="Entities/Models/Vacation.cs" />
-      <File FileName="Entities/Models/VacationUserAssociation.cs" />
+      <File FileName="CashCrewAPI/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="CashCrewAPI/appsettings.json" Line="3" Column="10" />
+      <File FileName="Entities/Models/User.cs" Line="12" Column="1" />
+      <File FileName="Entities/Models/Vacation.cs" Line="7" Column="6" />
+      <File FileName="Entities/Models/VacationUserAssociation.cs" Line="1" Column="1" />
       <File FileName="Entities/Models/VacationPasswordAssociation.cs" Line="1" Column="1" />
-      <File FileName="Entities/Models/Payment.cs" />
+      <File FileName="Entities/Models/Payment.cs" Line="5" Column="6" />
       <File FileName="Entities/Models/PaymentParticipant.cs" />
-      <File FileName="Entities/Models/Debt.cs" />
-      <File FileName="Repositories/Contracts/IUserRepository.cs" Line="14" Column="17" />
+      <File FileName="Entities/Models/Debt.cs" Line="4" Column="18" />
+      <File FileName="Repositories/Contracts/IUserRepository.cs" Line="9" Column="61" />
       <File FileName="Repositories/Contracts/IRepositoryBase.cs" />
-      <File FileName="Repositories/Contracts/IRepositoryManager.cs" Line="6" Column="15" />
-      <File FileName="Repositories/EFCore/RepositoryBase.cs" Line="8" Column="27" />
-      <File FileName="Repositories/EFCore/RepositoryContext.cs" />
-      <File FileName="Repositories/EFCore/UserRepository.cs" Line="41" Column="1" />
-      <File FileName="Services/Contracts/IUserService.cs" Line="18" Column="1" />
-      <File FileName="Services/UserManager.cs" Line="18" Column="42" />
-      <File FileName="Repositories/EFCore/RepositoryManager.cs" Line="6" Column="47" />
-      <File FileName="Services/Contracts/IServiceManager.cs" Line="8" Column="6" />
-      <File FileName="Services/ServiceManager.cs" />
-      <File FileName="CashCrewAPI/Extensions/ServicesExtensions.cs" />
-      <File FileName="Presentation/Controller/UserController.cs" Line="34" Column="10" />
+      <File FileName="Repositories/Contracts/IRepositoryManager.cs" Line="4" Column="30" />
+      <File FileName="Repositories/EFCore/RepositoryBase.cs" Line="11" Column="19" />
+      <File FileName="Repositories/EFCore/RepositoryContext.cs" Line="20" Column="28" />
+      <File FileName="Repositories/EFCore/UserRepository.cs" Line="12" Column="22" />
+      <File FileName="Services/Contracts/IUserService.cs" Line="17" Column="6" />
+      <File FileName="Services/UserManager.cs" Line="67" Column="63" />
+      <File FileName="Repositories/EFCore/RepositoryManager.cs" Line="9" Column="17" />
+      <File FileName="Services/Contracts/IServiceManager.cs" Line="8" Column="20" />
+      <File FileName="Services/ServiceManager.cs" Line="24" Column="1" />
+      <File FileName="CashCrewAPI/Extensions/ServicesExtensions.cs" Line="18" Column="41" />
+      <File FileName="Presentation/Controller/UserController.cs" Line="60" Column="59" />
       <File FileName="Services/Contracts/ILoggerService.cs" />
       <File FileName="Services/LoggerManager.cs" />
       <File FileName="Entities/ErrorModel/ErrorDetails.cs" />
       <File FileName="CashCrewAPI/Extensions/ExceptionMiddlewareExtensions.cs" />
-      <File FileName="Entities/Exceptions/NotFoundException.cs" />
-      <File FileName="Entities/Exceptions/UserNotFoundException.cs" />
+      <File FileName="Entities/Exceptions/NotFoundException.cs" Line="1" Column="1" />
+      <File FileName="Entities/Exceptions/UserNotFoundException.cs" Line="11" Column="1" />
       <File FileName="CashCrewAPI/nlog.config" />
-      <File FileName="Entities/DataTransferObjects/UserDtoForUpdate.cs" Line="11" Column="1" />
-      <File FileName="CashCrewAPI/Utilities/AutoMapper/MappingProfile.cs" />
-      <File FileName="CashCrewAPI/Migrations/20230910163754_InitialCreate.cs" />
-      <File FileName="Entities/DataTransferObjects/UserDtoForManipulation.cs" Line="12" Column="8" />
-      <File FileName="Entities/DataTransferObjects/UserDtoForInsertion.cs" Line="6" Column="6" />
+      <File FileName="CashCrewAPI/Utilities/AutoMapper/MappingProfile.cs" Line="16" Column="20" />
       <File FileName="Presentation/AssemblyReference.cs" />
       <File FileName="Entities/LogModel/LogDetails.cs" />
       <File FileName="Presentation/ActionFilters/LogFilterAttribute.cs" />
-      <File FileName="Entities/RequestFeatures/RequestParameters.cs" Line="1" Column="1" />
+      <File FileName="Entities/RequestFeatures/RequestParameters.cs" />
       <File FileName="Entities/RequestFeatures/UserParameters.cs" Line="4" Column="18" />
-      <File FileName="Entities/RequestFeatures/MetaData.cs" />
+      <File FileName="Entities/RequestFeatures/MetaData.cs" Line="15" Column="1" />
       <File FileName="Entities/RequestFeatures/PagedList.cs" />
       <File FileName="Repositories/Extensions/OrderQueryBuilder.cs" />
-      <File FileName="Entities/DataTransferObjects/UserDto.cs" Line="7" Column="25" />
-      <File FileName="Presentation/Controller/LoginController.cs" Line="20" Column="39" />
-      <File FileName="Presentation/ActionFilters/ValidationFilterAttribute.cs" Line="13" Column="1" />
-      <File FileName="Entities/DataTransferObjects/Login/UserDtoForInsertion.cs" Line="11" Column="1" />
-      <File FileName="Entities/DataTransferObjects/Login/LoginDtoForManipulation.cs" Line="5" Column="28" />
-      <File FileName="Services/Contracts/ILoginService.cs" Line="10" Column="29" />
-      <File FileName="Services/LoginManager.cs" Line="23" Column="30" />
-      <File FileName="Repositories/Contracts/ILoginRepository.cs" Line="13" Column="1" />
+      <File FileName="Presentation/Controller/LoginController.cs" Line="30" Column="56" />
+      <File FileName="Presentation/ActionFilters/ValidationFilterAttribute.cs" />
+      <File FileName="Entities/DataTransferObjects/Login/LoginDtoForManipulation.cs" />
+      <File FileName="Services/Contracts/ILoginService.cs" Line="11" Column="6" />
+      <File FileName="Services/LoginManager.cs" Line="66" Column="30" />
+      <File FileName="Repositories/Contracts/ILoginRepository.cs" Line="8" Column="6" />
+      <File FileName="Presentation/Runtime/Validators/AuthProfileService.cs" Line="2" Column="22" />
+      <File FileName="Presentation/Runtime/Auth/Config/ApiResourceConfig.cs" Line="18" Column="20" />
+      <File FileName="Presentation/Runtime/Auth/Store/AuthClientStore.cs" Line="1" Column="18" />
+      <File FileName="Presentation/Runtime/Auth/Store/AuthResourceStore.cs" Line="5" Column="22" />
+      <File FileName="Presentation/Runtime/Auth/Config/ClientConfig.cs" Line="5" Column="22" />
+      <File FileName="Presentation/Runtime/Services/CorsPolicyAllowAllService.cs" Line="15" Column="1" />
+      <File FileName="Presentation/Runtime/Validators/ResourceOwnerPasswordValidator.cs" Line="19" Column="10" />
+      <File FileName="Repositories/Extensions/UserRepositoryExtensions.cs" Line="29" Column="18" />
+      <File FileName="../../../../../../usr/local/share/dotnet/sdk/7.0.310/Microsoft.Common.CurrentVersion.targets" Line="4693" Column="24" />
+      <File FileName="CashCrewAPI/Program.cs" Line="78" Column="3" />
+      <File FileName="CashCrewAPI/Migrations/RepositoryContextModelSnapshot.cs" Line="20" Column="38" />
+      <File FileName="Entities/DataTransferObjects/User/UserDtoForInsertion.cs" Line="5" Column="19" />
+      <File FileName="Entities/DataTransferObjects/User/UserDtoForManipulation.cs" Line="15" Column="30" />
+      <File FileName="Entities/Models/Login.cs" Line="7" Column="6" />
+      <File FileName="Entities/DataTransferObjects/User/UserDto.cs" Line="10" Column="31" />
+      <File FileName="Entities/Models/LoginResponseModel.cs" Line="9" Column="1" />
+      <File FileName="Presentation/.DS_Store" />
+      <File FileName="Entities/DataTransferObjects/Login/LoginDto.cs" Line="11" Column="1" />
+      <File FileName="CashCrewAPI/internallog.txt" Line="1" Column="1" />
+      <File FileName="Services/Util/Encryption.cs" Line="94" Column="1" />
+      <File FileName="Entities/Exceptions/UserAlreadyExistException.cs" Line="1" Column="1" />
+      <File FileName="Presentation/Controller/UserController (copy).cs" Line="30" Column="70" />
+      <File FileName="Entities/DataTransferObjects/Vacation/VacationDto.cs" Line="6" Column="19" />
+      <File FileName="Entities/DataTransferObjects/Vacation/VacationDtoForManipulation.cs" Line="24" Column="51" />
+      <File FileName="Services/Contracts/IVacationService.cs" Line="10" Column="41" />
+      <File FileName="Services/VacationManager.cs" Line="33" Column="28" />
+      <File FileName="Repositories/Contracts/IVacationRepository.cs" Line="8" Column="32" />
+      <File FileName="Repositories/EFCore/VacationRepository.cs" Line="10" Column="25" />
+      <File FileName="CashCrewAPI/ContextFactory/RepositoryContextFactory.cs" Line="9" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="CashCrewAPI" expanded="True">
+          <Node name="CashCrewAPI">
+            <Node name="CashCrewAPI">
+              <Node name="ContextFactory" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
             <Node name="Entities">
               <Node name="DataTransferObjects" expanded="True">
-                <Node name="Login" expanded="True" />
                 <Node name="User" expanded="True" />
+                <Node name="Vacation" expanded="True" />
               </Node>
-              <Node name="ErrorModel" expanded="True" />
               <Node name="Exceptions" expanded="True" />
-              <Node name="LogModel" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="User.cs" selected="True" />
+              </Node>
               <Node name="RequestFeatures" expanded="True" />
+            </Node>
+            <Node name="Presentation">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Controller" expanded="True" />
             </Node>
             <Node name="Repositories">
               <Node name="Contracts" expanded="True" />
-              <Node name="EFCore" expanded="True">
-                <Node name="RepositoryManager.cs" selected="True" />
-              </Node>
-              <Node name="Extensions" expanded="True" />
             </Node>
             <Node name="Services">
               <Node name="Contracts" expanded="True" />
@@ -89,7 +118,11 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/ContextFactory/RepositoryContextFactory.cs" relfile="CashCrewAPI/ContextFactory/RepositoryContextFactory.cs" line="20" column="1" />
+      <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/Runtime/Auth/Config/ClientConfig.cs" relfile="CashCrewAPI/Runtime/Auth/Config/ClientConfig.cs" line="44" column="1" />
+      <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/CashCrewAPI/Program.cs" relfile="CashCrewAPI/Program.cs" line="122" column="1" />
       <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Presentation/Controller/UserController.cs" relfile="Presentation/Controller/UserController.cs" line="62" column="1" />
+      <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/UserManager.cs" relfile="Services/UserManager.cs" line="30" column="1" />
+      <Breakpoint file="/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Services/UserManager.cs" relfile="Services/UserManager.cs" line="67" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.CashCrewAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />

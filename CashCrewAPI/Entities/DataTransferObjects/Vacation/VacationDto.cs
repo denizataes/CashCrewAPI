@@ -1,12 +1,8 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity;
-
-namespace Entities.Models
+namespace Entities.DataTransferObjects
 {
-    public class Vacation
-    {
-        [Key]
+	public record VacationDto
+	{
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -16,4 +12,3 @@ namespace Entities.Models
         public DateTime CreatedDateTime { get; set; }
     }
 }
-

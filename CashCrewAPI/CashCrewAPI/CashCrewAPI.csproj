@@ -32,6 +32,7 @@
     <None Remove="Assets\" />
     <None Remove="Assets\Certificates\" />
     <None Remove="Runtime\" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -41,6 +42,7 @@
     <Folder Include="Assets\" />
     <Folder Include="Assets\Certificates\" />
     <Folder Include="Runtime\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repositories\Repositories.csproj">

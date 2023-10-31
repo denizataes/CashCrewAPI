@@ -1,11 +1,11 @@
-/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/bin/Debug/net6.0/Entities.deps.json
-/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/bin/Debug/net6.0/Entities.dll
-/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/bin/Debug/net6.0/Entities.pdb
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.csproj.AssemblyReference.cache
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.GeneratedMSBuildEditorConfig.editorconfig
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.AssemblyInfoInputs.cache
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.AssemblyInfo.cs
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.csproj.CoreCompileInputs.cache
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/bin/Debug/net6.0/Entities.deps.json
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/bin/Debug/net6.0/Entities.dll
+/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/bin/Debug/net6.0/Entities.pdb
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.dll
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/refint/Entities.dll
 /Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/Debug/net6.0/Entities.pdb

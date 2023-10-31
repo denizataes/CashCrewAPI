@@ -21,6 +21,7 @@ namespace CashCrewAPI.ContextFactory
                 .UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection"),
                 prj => prj.MigrationsAssembly("CashCrewAPI"));
 
+
             return new RepositoryContext(builder.Options);
         }
     }
