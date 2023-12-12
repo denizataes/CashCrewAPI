@@ -38,9 +38,6 @@ namespace Presentation.Controller
             return await _manager.VacationService.GetVacationsByUserIdAsync(userId);
         }
 
-
-
-
     }
 }
 

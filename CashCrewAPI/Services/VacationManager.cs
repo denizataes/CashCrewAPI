@@ -40,8 +40,17 @@ namespace Services
             {
                 _manager.Vacation.CreateVacation(entity);
                 await _manager.SaveAsync();
+
+                var vacationId = entity.ID;
+
+                var associationModel = new VacationUserAssociation();
+                associationModel.UserID = entity.CreatedUserID;
+                associationModel.VacationID = vacationId;
+
+                _manager.VacationUserAssociation.CreateVacationUserAssociationAsync(associationModel);
+                await _manager.SaveAsync();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 
             }

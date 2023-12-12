@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 //using Repositories.EFCore.Config;
 
 namespace Repositories.EFCore
@@ -18,7 +19,8 @@ namespace Repositories.EFCore
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Vacation> Vacations { get; set; }
-
+        public DbSet<VacationUserAssociation> VacationUserAssociation { get; set; }
     }
+
 }
 

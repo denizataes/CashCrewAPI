@@ -60,7 +60,7 @@ namespace CashCrewAPI.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
                     b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("CreatedUserID")
                         .HasColumnType("integer");
@@ -84,6 +84,25 @@ namespace CashCrewAPI.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Vacations");
+                });
+
+            modelBuilder.Entity("Entities.Models.VacationUserAssociation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("VacationID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VacationUserAssociation");
                 });
 #pragma warning restore 612, 618
         }

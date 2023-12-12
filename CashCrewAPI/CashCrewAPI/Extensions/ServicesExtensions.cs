@@ -28,6 +28,7 @@ namespace CashCrewAPI.Extensions
         {
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVacationRepository, VacationRepository>();
+            services.AddScoped<IVacationUserAssociationRepository, VacationUserAssociationRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services)

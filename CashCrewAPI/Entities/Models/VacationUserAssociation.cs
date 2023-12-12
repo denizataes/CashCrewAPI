@@ -1,9 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Entities.Models
 {
     public class VacationUserAssociation
     {
-        public string VacationID { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public int VacationID { get; set; }
         public int UserID { get; set; }
     }
 }
