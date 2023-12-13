@@ -15,7 +15,18 @@ namespace Repositories.EFCore
         {
         }
 
-        public void CreateVacationUserAssociationAsync(VacationUserAssociation vacation) => Create(vacation);
+        public async Task<bool> CheckIfUserAlreadyRegistered(int vacationID, int userID)
+        {
+            var result = await FindByCondition(
+                            b => b.VacationID.Equals(vacationID) && b.UserID.Equals(userID), false
+                         )
+                         .ToListAsync();
+
+            return result.Any(); 
+        }
+
+
+        public async Task CreateVacationUserAssociationAsync(VacationUserAssociation vacation) => Create(vacation);
 
     }
 }

@@ -7,6 +7,7 @@ using Entities.DataTransferObjects;
 using Presentation.ActionFilters;
 using Entities.RequestFeatures;
 using System.Text.Json;
+using Entities.Models;
 
 namespace Presentation.Controller
 {
@@ -37,6 +38,15 @@ namespace Presentation.Controller
         {
             return await _manager.VacationService.GetVacationsByUserIdAsync(userId);
         }
+
+        [HttpPost("JoinVacation")]
+        [Authorize]
+        public async Task<ResultModel<bool>> JoinVacationAsync([FromBody] JoinVacationDto joinVacationDto)
+        {
+            return await _manager.VacationService.JoinVacationAsync(joinVacationDto);
+        }
+
+
 
     }
 }

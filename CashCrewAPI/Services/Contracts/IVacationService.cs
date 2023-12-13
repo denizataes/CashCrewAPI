@@ -9,6 +9,7 @@ namespace Services.Contracts
     {
         Task<VacationDto> CreateVacationAsync(VacationDto vacationDto);
         Task<List<VacationDto>> GetVacationsByUserIdAsync(int id);
+        Task<ResultModel<bool>> JoinVacationAsync(JoinVacationDto joinVacationDto);
     }
 }
 

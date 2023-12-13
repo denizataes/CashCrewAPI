@@ -7,7 +7,8 @@ namespace Repositories.Contracts
 {
     public interface IVacationUserAssociationRepository : IRepositoryBase<VacationUserAssociation>
     {
-        void CreateVacationUserAssociationAsync(VacationUserAssociation vacation);
+        Task CreateVacationUserAssociationAsync(VacationUserAssociation vacation);
+        Task<bool> CheckIfUserAlreadyRegistered(int vacationID, int userID);
     }
 }
 
