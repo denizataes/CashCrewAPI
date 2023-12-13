@@ -17,6 +17,19 @@ namespace Repositories.EFCore
 
         public void CreateVacation(Vacation vacation) => Create(vacation);
 
+        public async Task<PagedList<Vacation>> GetAllVacationAsync(SearchParameters vacationParameters, bool trackChanges)
+        {
+            var vacation = await FindAll(trackChanges)
+            .Search(vacationParameters.SearchTerm)
+            .Sort(vacationParameters.OrderBy)
+            .ToListAsync();
+
+            return PagedList<Vacation>
+                .ToPagedList(vacation,
+                vacationParameters.PageNumber,
+                vacationParameters.PageSize);
+        }
+
         public async Task<Vacation> GetVacationById(int id)
         => await FindByCondition(b => b.ID.Equals(id), false)
                         .FirstOrDefaultAsync();

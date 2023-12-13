@@ -11,6 +11,7 @@ namespace Repositories.Contracts
         Vacation GetVacationByTitleAndDescAsync(string title, string description, bool trackChanges);
         Task<List<Vacation>> GetVacationsByUserIdAsync(int id);
         Task<Vacation> GetVacationById(int id);
+        Task<PagedList<Vacation>> GetAllVacationAsync(SearchParameters vacationParameters, bool trackChanges);
     }
 }
 

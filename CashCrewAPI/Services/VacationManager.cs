@@ -57,6 +57,13 @@ namespace Services
             return _mapper.Map<VacationDto>(entity);
         }
 
+        public async Task<(IEnumerable<VacationDto> vacations, MetaData metaData)> GetAllVacationAsync(SearchParameters vacationParameters, bool trackChanges)
+        {
+            var vacationsWithMetaData = await _manager.Vacation.GetAllVacationAsync(vacationParameters, trackChanges);
+            var vacationDto = _mapper.Map<IEnumerable<VacationDto>>(vacationsWithMetaData);
+            return (vacationDto, vacationsWithMetaData.MetaData);
+        }
+
         public async Task<List<VacationDto>> GetVacationsByUserIdAsync(int id)
         {
             var entity = await _manager.Vacation.GetVacationsByUserIdAsync(id);

@@ -46,6 +46,18 @@ namespace Presentation.Controller
             return await _manager.VacationService.JoinVacationAsync(joinVacationDto);
         }
 
+        [HttpGet("SearchVacation")]
+        [Authorize]
+        public async Task<IActionResult> SearchVacation([FromQuery] SearchParameters searchParameters)
+        {
+            var pagedResult = await _manager
+                .VacationService
+                .GetAllVacationAsync(searchParameters, false);
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(pagedResult.metaData));
+            return Ok(pagedResult.vacations);
+        }
+
 
 
     }
