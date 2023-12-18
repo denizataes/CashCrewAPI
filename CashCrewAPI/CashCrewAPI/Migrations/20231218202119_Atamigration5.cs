@@ -6,10 +6,28 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CashCrewAPI.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class Atamigration5 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Payment",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    VacationID = table.Column<int>(type: "integer", nullable: false),
+                    PaidUserID = table.Column<int>(type: "integer", nullable: false),
+                    ProductName = table.Column<string>(type: "text", nullable: false),
+                    ProductDescription = table.Column<string>(type: "text", nullable: false),
+                    PaidDateTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Price = table.Column<decimal>(type: "numeric", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Payment", x => x.ID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
@@ -57,10 +75,38 @@ namespace CashCrewAPI.Migrations
                 {
                     table.PrimaryKey("PK_VacationUserAssociation", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "PaymentParticipant",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    PaymentID = table.Column<int>(type: "integer", nullable: false),
+                    ParticipantUserID = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PaymentParticipant", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_PaymentParticipant_Payment_PaymentID",
+                        column: x => x.PaymentID,
+                        principalTable: "Payment",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PaymentParticipant_PaymentID",
+                table: "PaymentParticipant",
+                column: "PaymentID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "PaymentParticipant");
+
             migrationBuilder.DropTable(
                 name: "Users");
 
@@ -69,6 +115,9 @@ namespace CashCrewAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "VacationUserAssociation");
+
+            migrationBuilder.DropTable(
+                name: "Payment");
         }
     }
 }

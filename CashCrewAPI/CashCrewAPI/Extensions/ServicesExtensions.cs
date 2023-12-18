@@ -28,7 +28,9 @@ namespace CashCrewAPI.Extensions
         {
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IVacationRepository, VacationRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IVacationUserAssociationRepository, VacationUserAssociationRepository>();
+            services.AddScoped<IPaymentParticipantRepository, PaymentParticipantRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services)
@@ -36,6 +38,7 @@ namespace CashCrewAPI.Extensions
             services.AddScoped<IUserService, UserManager>();
             services.AddScoped<ILoginService, LoginManager>();
             services.AddScoped<IVacationService, VacationManager>();
+            services.AddScoped<IPaymentService, PaymentManager>();
         }
         public static void ConfigureActionFilters(this IServiceCollection services)
         {

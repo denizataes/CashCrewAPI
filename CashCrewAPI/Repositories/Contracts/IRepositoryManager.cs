@@ -7,6 +7,8 @@ namespace Repositories.Contracts
         ILoginRepository Login { get; }
         IVacationRepository Vacation { get; }
         IVacationUserAssociationRepository VacationUserAssociation { get; }
+        IPaymentRepository Payment { get; }
+        IPaymentParticipantRepository PaymentParticipant { get; }
         Task SaveAsync();
     }
 }

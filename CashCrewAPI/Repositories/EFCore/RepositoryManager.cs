@@ -8,19 +8,25 @@ namespace Repositories.EFCore
 
         private readonly RepositoryContext _context;
         private readonly IUserRepository _userRepository;
+        private readonly IPaymentRepository _paymentRepository;
         private readonly IVacationRepository _vacationRepository;
         private readonly IVacationUserAssociationRepository _vacationUserRepository;
+        private readonly IPaymentParticipantRepository _paymentParticipantRepository;
 
         public RepositoryManager(RepositoryContext context,
             IUserRepository userRepository,
             IVacationRepository vacationRepository,
-            IVacationUserAssociationRepository vacationUserRepository
+            IVacationUserAssociationRepository vacationUserRepository,
+            IPaymentRepository paymentRepository,
+            IPaymentParticipantRepository paymentParticipantRepository
             )
         {
             _context = context;
             _userRepository = userRepository;
             _vacationRepository = vacationRepository;
             _vacationUserRepository = vacationUserRepository;
+            _paymentRepository = paymentRepository;
+            _paymentParticipantRepository = paymentParticipantRepository;
         }
 
         public IUserRepository User => _userRepository;
@@ -28,6 +34,10 @@ namespace Repositories.EFCore
         public ILoginRepository Login => throw new NotImplementedException();
 
         public IVacationRepository Vacation => _vacationRepository;
+
+        public IPaymentRepository Payment => _paymentRepository;
+
+        public IPaymentParticipantRepository PaymentParticipant => _paymentParticipantRepository;
 
         public IVacationUserAssociationRepository VacationUserAssociation => _vacationUserRepository;
 

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Entities.Models
+namespace Entities.DataTransferObjects
 {
-    public class Payment
+    public record PaymentDto
     {
-        [Key]
         public int ID { get; set; }
         public int VacationID { get; set; }
         public int PaidUserID { get; set; }
@@ -14,7 +11,6 @@ namespace Entities.Models
         public DateTime PaidDateTime { get; set; }
         public decimal Price { get; set; }
 
-        public List<PaymentParticipant> Participants { get; set; }
+        public List<PaymentParticipantDto> Participants { get; set; }
     }
 }
-

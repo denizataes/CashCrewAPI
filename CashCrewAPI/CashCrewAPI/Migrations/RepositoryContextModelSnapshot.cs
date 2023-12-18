@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Repositories.EFCore;
@@ -12,17 +11,70 @@ using Repositories.EFCore;
 namespace CashCrewAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231212194402_NewMigration")]
-    partial class NewMigration
+    partial class RepositoryContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.21")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("Entities.Models.Payment", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<DateTime>("PaidDateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("PaidUserID")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("ProductDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("VacationID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Payment");
+                });
+
+            modelBuilder.Entity("Entities.Models.PaymentParticipant", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("ParticipantUserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PaymentID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("PaymentID");
+
+                    b.ToTable("PaymentParticipant");
+                });
 
             modelBuilder.Entity("Entities.Models.User", b =>
                 {
@@ -105,6 +157,20 @@ namespace CashCrewAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VacationUserAssociation");
+                });
+
+            modelBuilder.Entity("Entities.Models.PaymentParticipant", b =>
+                {
+                    b.HasOne("Entities.Models.Payment", null)
+                        .WithMany("Participants")
+                        .HasForeignKey("PaymentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Entities.Models.Payment", b =>
+                {
+                    b.Navigation("Participants");
                 });
 #pragma warning restore 612, 618
         }

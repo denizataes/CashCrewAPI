@@ -1,14 +1,10 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace Entities.Models
+namespace Entities.DataTransferObjects
 {
-    public class PaymentParticipant
+    public class PaymentParticipantDto
     {
-        [Key]
         public int ID { get; set; }
         public int PaymentID { get; set; }
         public int ParticipantUserID { get; set; }
     }
 }
-

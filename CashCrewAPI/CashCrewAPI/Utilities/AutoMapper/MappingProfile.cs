@@ -16,6 +16,15 @@ namespace WebApi.Utilities.AutoMapper
             CreateMap<Vacation, VacationDto>();
             CreateMap<VacationDto, Vacation>();
 
+
+            CreateMap<PaymentDto, Payment>();
+            CreateMap<Payment, PaymentDto>();
+
+
+            CreateMap<PaymentParticipant, PaymentParticipantDto>();
+            CreateMap<PaymentParticipantDto, PaymentParticipant>();
+
+
         }
     }
 }

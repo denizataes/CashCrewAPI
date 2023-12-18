@@ -8,14 +8,17 @@ namespace Services
         private readonly IUserService _userService;
         private readonly ILoginService _loginService;
         private readonly IVacationService _vacationService;
+        private readonly IPaymentService _paymentService;
 
         public ServiceManager(IUserService userService,
             ILoginService loginService,
-            IVacationService vacationService)
+            IVacationService vacationService,
+            IPaymentService paymentService)
         {
             _userService = userService;
             _loginService = loginService;
             _vacationService = vacationService;
+            _paymentService = paymentService;
         }
 
         public IUserService UserService => _userService;
@@ -23,6 +26,8 @@ namespace Services
         public ILoginService LoginService => _loginService;
 
         public IVacationService VacationService => _vacationService;
+
+        public IPaymentService PaymentService => _paymentService;
     }
 }
 
