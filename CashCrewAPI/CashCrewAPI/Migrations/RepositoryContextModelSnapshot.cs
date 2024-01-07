@@ -17,10 +17,35 @@ namespace CashCrewAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.2")
+                .HasAnnotation("ProductVersion", "6.0.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("Entities.Models.Debt", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("CreditorUserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("DebtorUserID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("VacationID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Debt");
+                });
 
             modelBuilder.Entity("Entities.Models.Payment", b =>
                 {
@@ -29,6 +54,9 @@ namespace CashCrewAPI.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<bool>("IsDebt")
+                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("PaidDateTime")
                         .HasColumnType("timestamp without time zone");

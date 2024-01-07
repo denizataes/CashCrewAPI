@@ -16,7 +16,10 @@ namespace Repositories.EFCore
         }
 
         public async Task CreatePaymentParticipantAsync(PaymentParticipant paymentParticipant) => Create(paymentParticipant);
-        
+
+        public async Task<List<PaymentParticipant>> GetPaymentParticipantsByPaymentID(int paymentID) =>
+             await FindByCondition(b => b.PaymentID.Equals(paymentID), false)
+            .ToListAsync();
     }
 }
 

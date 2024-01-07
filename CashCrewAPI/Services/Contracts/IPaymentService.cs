@@ -7,7 +7,9 @@ namespace Services.Contracts
 {
     public interface IPaymentService
     {
-        Task<ResultModel<bool>> CreatePaymentAsync(PaymentDto paymentDto);
+        Task<ResultModel<bool>> CreatePaymentAsync(PaymentWriteDto PaymentWriteDto);
+        Task<List<PaymentReadDto>> GetAllPaymentsByVacationIDAsync(int ID);
+        Task<Decimal> GetTotalDeptByVacationIDAsync(int ID);
+
     }
 }
-

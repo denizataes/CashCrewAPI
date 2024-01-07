@@ -26,10 +26,31 @@ namespace Presentation.Controller
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost("CreatePayment")]
         [Authorize]
-        public async Task<IActionResult> CreatePaymentAsync([FromBody] PaymentDto paymentDto)
+        public async Task<IActionResult> CreatePaymentAsync([FromBody] PaymentWriteDto PaymentWriteDto)
         {
-            var paymentResult = await _manager.PaymentService.CreatePaymentAsync(paymentDto);
+            var paymentResult = await _manager.PaymentService.CreatePaymentAsync(PaymentWriteDto);
+            if (paymentResult.Success)
+            {
+                var payments = await _manager.PaymentService.GetAllPaymentsByVacationIDAsync(PaymentWriteDto.VacationID);
+                await _manager.DebtService.ControlAndSaveDebtAsync(PaymentWriteDto.VacationID, payments);
+            }
             return StatusCode(201, paymentResult);
+        }
+
+        [HttpGet("GetAllPaymentsByVacationID")]
+        [Authorize]
+        public async Task<List<PaymentReadDto>> GetAllPaymentsByVacationIDAsync([FromQuery] int ID)
+        {
+            var payments = await _manager.PaymentService.GetAllPaymentsByVacationIDAsync(ID);
+            return payments;
+        }
+
+        [HttpGet("GetTotalDeptByVacationID")]
+        [Authorize]
+        public async Task<decimal> GetTotalDeptByVacationIDAsync([FromQuery] int ID)
+        {
+            var totalDept = await _manager.PaymentService.GetTotalDeptByVacationIDAsync(ID);
+            return totalDept;
         }
 
     }

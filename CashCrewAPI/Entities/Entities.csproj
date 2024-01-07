@@ -17,6 +17,7 @@
     <None Remove="DataTransferObjects\User\" />
     <None Remove="DataTransferObjects\Vacation\" />
     <None Remove="DataTransferObjects\Payment\" />
+    <None Remove="DataTransferObjects\Debt\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -29,6 +30,7 @@
     <Folder Include="DataTransferObjects\User\" />
     <Folder Include="DataTransferObjects\Vacation\" />
     <Folder Include="DataTransferObjects\Payment\" />
+    <Folder Include="DataTransferObjects\Debt\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />

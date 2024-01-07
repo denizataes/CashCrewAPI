@@ -13,6 +13,7 @@ namespace Entities.Models
         public string ProductDescription { get; set; }
         public DateTime PaidDateTime { get; set; }
         public decimal Price { get; set; }
+        public bool IsDebt { get; set; }
 
         public List<PaymentParticipant> Participants { get; set; }
     }

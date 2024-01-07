@@ -16,7 +16,10 @@ namespace Repositories.EFCore
         }
 
         public async Task CreatePaymentAsync(Payment payment) => Create(payment);
-        
+
+        public async Task<List<Payment>> GetAllPaymentsByVacationIDAsync(int ID) =>
+            await FindByCondition(b => b.VacationID.Equals(ID), false)
+            .ToListAsync();
     }
 }
 

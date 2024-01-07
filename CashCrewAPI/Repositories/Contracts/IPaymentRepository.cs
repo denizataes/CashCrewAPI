@@ -8,6 +8,7 @@ namespace Repositories.Contracts
     public interface IPaymentRepository : IRepositoryBase<Payment>
     {
         Task CreatePaymentAsync(Payment payment);
+        Task<List<Payment>> GetAllPaymentsByVacationIDAsync(int ID);
     }
 }
 

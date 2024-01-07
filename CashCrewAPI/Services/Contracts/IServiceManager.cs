@@ -7,6 +7,7 @@ namespace Services.Contracts
         ILoginService LoginService { get; }
         IVacationService VacationService { get; }
         IPaymentService PaymentService { get; }
+        IDebtService DebtService { get; }
     }
 }
 

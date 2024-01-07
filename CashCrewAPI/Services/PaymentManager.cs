@@ -25,28 +25,25 @@ namespace Services
             _mapper = mapper;
         }
 
-        public async Task<ResultModel<bool>> CreatePaymentAsync(PaymentDto paymentDto)
+        public async Task<ResultModel<bool>> CreatePaymentAsync(PaymentWriteDto PaymentWriteDto)
         {
-            var entity = _mapper.Map<Payment>(paymentDto);
+            var entity = _mapper.Map<Payment>(PaymentWriteDto);
 
             if (entity is null)
                 throw new ArgumentNullException(nameof(entity));
 
             try
             {
-                _manager.Payment.CreatePaymentAsync(entity);
-                await _manager.SaveAsync(); 
 
-                foreach (var participantDto in paymentDto.Participants)
+                await _manager.Payment.CreatePaymentAsync(entity);
+                var participantToRemove = entity.Participants.FirstOrDefault(p => p.ParticipantUserID.Equals(entity.PaidUserID));
+                if (participantToRemove != null)
                 {
-                    var paymentParticipant = new PaymentParticipant
-                    {
-                        PaymentID = entity.ID,
-                        ParticipantUserID = participantDto.ParticipantUserID
-                    };
-
-                    await _manager.PaymentParticipant.CreatePaymentParticipantAsync(paymentParticipant);
+                    entity.Participants.Remove(participantToRemove);
                 }
+
+                await _manager.SaveAsync();
+
             }
             catch (Exception e)
             {
@@ -56,6 +53,48 @@ namespace Services
             return new ResultModel<bool>(true, "Başarıyla oluşturuldu.");
 
             }
+
+        public async Task<List<PaymentReadDto>> GetAllPaymentsByVacationIDAsync(int ID)
+        {
+            var payments = await _manager.Payment.GetAllPaymentsByVacationIDAsync(ID);
+            List<PaymentReadDto> returnList = new List<PaymentReadDto>();
+            foreach(var payment in payments)
+            {
+                var paymentParticipants = await _manager.PaymentParticipant.GetPaymentParticipantsByPaymentID(payment.ID);
+                PaymentReadDto obj = new PaymentReadDto();
+                obj.ID = payment.ID;
+                obj.PaidDateTime = payment.PaidDateTime;
+                obj.PaidUser = _mapper.Map<UserInfoDto>(await _manager.User.GetUserByIdAsync(payment.PaidUserID, false));
+                obj.Price = payment.Price;
+                obj.ProductDescription = payment.ProductDescription;
+                obj.ProductName = payment.ProductName;
+                obj.VacationID = payment.VacationID;
+                if (paymentParticipants != null)
+                {
+                    foreach (var paymentParticipant in paymentParticipants)
+                    {
+                        var user = _mapper.Map<UserInfoDto>(await _manager.User.GetUserByIdAsync(paymentParticipant.ParticipantUserID, false));
+                        if (user is not null)
+                        {
+                            PaymentParticipantReadDto pprd = new PaymentParticipantReadDto();
+                            pprd.ParticipantUser = user;
+                            if (obj.Participants == null)
+                                obj.Participants = new List<PaymentParticipantReadDto>();
+
+                            obj.Participants.Add(pprd);
+                        }
+                    }
+                }
+                returnList.Add(obj);
+            }
+            return returnList;
+        }
+
+        public async Task<decimal> GetTotalDeptByVacationIDAsync(int ID)
+        {
+            var payments = await _manager.Payment.GetAllPaymentsByVacationIDAsync(ID);
+            return payments.Sum(payment => payment.Price);
+        }
     }
 }
 

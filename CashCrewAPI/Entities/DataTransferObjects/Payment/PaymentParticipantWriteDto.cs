@@ -1,9 +1,8 @@
 ﻿using System;
 namespace Entities.DataTransferObjects
 {
-    public class PaymentParticipantDto
+    public class PaymentParticipantWriteDto
     {
-        public int ID { get; set; }
         public int PaymentID { get; set; }
         public int ParticipantUserID { get; set; }
     }

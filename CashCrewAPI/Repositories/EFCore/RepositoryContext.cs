@@ -22,6 +22,7 @@ namespace Repositories.EFCore
         public DbSet<VacationUserAssociation> VacationUserAssociation { get; set; }
         public DbSet<Payment> Payment { get; set; }
         public DbSet<PaymentParticipant> PaymentParticipant { get; set; }
+        public DbSet<Debt> Debt { get; set; }
     }
 
 }

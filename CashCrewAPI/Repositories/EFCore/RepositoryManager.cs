@@ -12,13 +12,15 @@ namespace Repositories.EFCore
         private readonly IVacationRepository _vacationRepository;
         private readonly IVacationUserAssociationRepository _vacationUserRepository;
         private readonly IPaymentParticipantRepository _paymentParticipantRepository;
+        private readonly IDebtRepository _debtRepository;
 
         public RepositoryManager(RepositoryContext context,
             IUserRepository userRepository,
             IVacationRepository vacationRepository,
             IVacationUserAssociationRepository vacationUserRepository,
             IPaymentRepository paymentRepository,
-            IPaymentParticipantRepository paymentParticipantRepository
+            IPaymentParticipantRepository paymentParticipantRepository,
+            IDebtRepository debtRepository
             )
         {
             _context = context;
@@ -27,6 +29,7 @@ namespace Repositories.EFCore
             _vacationUserRepository = vacationUserRepository;
             _paymentRepository = paymentRepository;
             _paymentParticipantRepository = paymentParticipantRepository;
+            _debtRepository = debtRepository;
         }
 
         public IUserRepository User => _userRepository;
@@ -36,6 +39,8 @@ namespace Repositories.EFCore
         public IVacationRepository Vacation => _vacationRepository;
 
         public IPaymentRepository Payment => _paymentRepository;
+
+        public IDebtRepository Debt => _debtRepository;
 
         public IPaymentParticipantRepository PaymentParticipant => _paymentParticipantRepository;
 
