@@ -18,6 +18,11 @@ namespace CashCrewAPI.Extensions
             IConfiguration configuration) => services.AddDbContext<RepositoryContext>(options =>
                     options.UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection")));
 
+        public static void ConfigureMSSQLContext(this IServiceCollection services, IConfiguration configuration) =>
+         services.AddDbContext<RepositoryContext>(options =>
+         options.UseSqlServer(configuration.GetConnectionString("MSSQLConnection")));
+
+
         public static void ConfigureRepositoryManager(this IServiceCollection services) =>
             services.AddScoped<IRepositoryManager, RepositoryManager>();
 

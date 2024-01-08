@@ -819,24 +819,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/denizataes/.nuget/packages/": {}
+    "C:\\Users\\atae\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/Entities.csproj",
+      "projectUniqueName": "C:\\Users\\atae\\Documents\\GitHub\\CashCrewAPI\\CashCrewAPI\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/Entities.csproj",
-      "packagesPath": "/Users/denizataes/.nuget/packages/",
-      "outputPath": "/Users/denizataes/Desktop/CashCrewAPI/CashCrewAPI/CashCrewAPI/Entities/obj/",
+      "projectPath": "C:\\Users\\atae\\Documents\\GitHub\\CashCrewAPI\\CashCrewAPI\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\atae\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\atae\\Documents\\GitHub\\CashCrewAPI\\CashCrewAPI\\Entities\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/denizataes/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\atae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -876,7 +886,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

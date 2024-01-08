@@ -18,7 +18,7 @@ namespace CashCrewAPI.ContextFactory
 
             // DbContextOptionsBuilder
             var builder = new DbContextOptionsBuilder<RepositoryContext>()
-                .UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection"),
+                .UseSqlServer(configuration.GetConnectionString("MSSQLConnection"),
                 prj => prj.MigrationsAssembly("CashCrewAPI"));
 
 
