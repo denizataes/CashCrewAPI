@@ -9,7 +9,7 @@ namespace Services.Contracts
     {
         Task<ResultModel<bool>> CreatePaymentAsync(PaymentWriteDto PaymentWriteDto);
         Task<List<PaymentReadDto>> GetAllPaymentsByVacationIDAsync(int ID);
-        Task<Decimal> GetTotalDeptByVacationIDAsync(int ID);
+        Task<Decimal> GetTotalPriceByVacationIDAsync(int ID);
 
     }
 }

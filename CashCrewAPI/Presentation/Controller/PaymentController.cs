@@ -45,11 +45,11 @@ namespace Presentation.Controller
             return payments;
         }
 
-        [HttpGet("GetTotalDeptByVacationID")]
+        [HttpGet("GetTotalPriceByVacationID")]
         [Authorize]
-        public async Task<decimal> GetTotalDeptByVacationIDAsync([FromQuery] int ID)
+        public async Task<decimal> GetTotalPriceByVacationIDAsync([FromQuery] int ID)
         {
-            var totalDept = await _manager.PaymentService.GetTotalDeptByVacationIDAsync(ID);
+            var totalDept = await _manager.PaymentService.GetTotalPriceByVacationIDAsync(ID);
             return totalDept;
         }
 

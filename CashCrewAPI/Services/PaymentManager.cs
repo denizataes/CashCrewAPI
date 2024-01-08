@@ -69,6 +69,7 @@ namespace Services
                 obj.ProductDescription = payment.ProductDescription;
                 obj.ProductName = payment.ProductName;
                 obj.VacationID = payment.VacationID;
+                obj.IsDebt = payment.IsDebt;
                 if (paymentParticipants != null)
                 {
                     foreach (var paymentParticipant in paymentParticipants)
@@ -90,10 +91,10 @@ namespace Services
             return returnList;
         }
 
-        public async Task<decimal> GetTotalDeptByVacationIDAsync(int ID)
+        public async Task<decimal> GetTotalPriceByVacationIDAsync(int ID)
         {
             var payments = await _manager.Payment.GetAllPaymentsByVacationIDAsync(ID);
-            return payments.Sum(payment => payment.Price);
+            return payments.Where(t => t.IsDebt == false).Sum(payment => payment.Price);
         }
     }
 }

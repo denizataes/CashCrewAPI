@@ -30,6 +30,25 @@ namespace Presentation.Controller
             var debts = await _manager.DebtService.GetDeptsByVacationIDAsync(ID);
             return debts;
         }
+
+        [HttpPost("PayDebt")]
+        [Authorize]
+        public async Task<ResultModel<bool>> PayDebtAsync([FromBody] PayDebtDto payDebtDto)
+        {
+            try
+            {
+                await _manager.DebtService.PayDebtAsync(payDebtDto);
+                var payments = await _manager.PaymentService.GetAllPaymentsByVacationIDAsync(payDebtDto.VacationID);
+                await _manager.DebtService.ControlAndSaveDebtAsync(payDebtDto.VacationID, payments);
+                return new ResultModel<bool>(true, "Borç ödemesi başarılı.");
+            }
+            catch (Exception ex)
+            {
+                // Hata durumu için 500 Internal Server Error döndür
+                return new ResultModel<bool>(false, "Borç ödemesi sırasında hata oluştu. Lütfen daha sonra tekrar deneyin.");
+            }
+        }
+
     }
 }
 

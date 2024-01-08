@@ -43,10 +43,10 @@ namespace Services
             {
                 var obj = new DebtReadDto();
                 obj.ID = debt.ID;
-                obj.Amount = debt.Amount;
+                obj.Amount = debt.Amount < 0 ? debt.Amount * -1 : debt.Amount;
                 obj.VacationID = debt.VacationID;
-                obj.CreditorUser = _mapper.Map<UserInfoDto>(await _manager.User.GetUserByIdAsync(debt.CreditorUserID, false));
-                obj.DebtorUser = _mapper.Map<UserInfoDto>(await _manager.User.GetUserByIdAsync(debt.DebtorUserID, false));
+                obj.CreditorUser = _mapper.Map<UserInfoDto>(await _manager.User.GetUserByIdAsync(debt.Amount > 0 ? debt.CreditorUserID : debt.DebtorUserID, false));
+                obj.DebtorUser = _mapper.Map<UserInfoDto>(await _manager.User.GetUserByIdAsync(debt.Amount > 0 ? debt.DebtorUserID : debt.CreditorUserID, false));
                 returnList.Add(obj);
             }
             return returnList;
@@ -80,15 +80,14 @@ namespace Services
                 if (transactions != null && transactions.Count > 0)
                     MinTransfers(transactions);
 
-                if (bestTransactions.Count > 0)
-                {
+                
                     var oldDebts = await _manager.Debt.GetDeptsByVacationIDAsync(vacationID);
                     foreach (var oldDebt in oldDebts)
                     {
                         await DeleteDeptAsync(oldDebt);
                         await _manager.SaveAsync();
                     }
-
+               
                     foreach (var transaction in bestTransactions)
                     {
                         int from = Convert.ToInt32(transaction[0]);
@@ -105,7 +104,7 @@ namespace Services
                         await _manager.SaveAsync();
 
                     }
-                }
+                
             }
             catch(Exception e)
             {
@@ -128,33 +127,23 @@ namespace Services
                 memberVsBalance[to] = memberVsBalance.GetValueOrDefault(to, 0) + amount;
             }
 
-            List<decimal> balances = new List<decimal>();
-            foreach (decimal amount in memberVsBalance.Values)
+            List<(decimal userId, decimal balance)> balances = new List<(decimal, decimal)>();
+            foreach (var entry in memberVsBalance)
             {
-                if (amount != 0)
-                {
-                    balances.Add(amount);
-                }
+                decimal userId = entry.Key;
+                decimal balance = entry.Value;
+                balances.Add((userId, balance));
             }
 
             bestTransactions = new List<decimal[]>(); // Yeni liste oluşturuluyor
-            indexToUserId = new Dictionary<decimal, decimal>(); // Indeks ile UserID arasındaki ilişkiyi tutacak sözlük
-            int userIdCounter = 1;
-
-            foreach (int userId in memberVsBalance.Keys)
-            {
-                indexToUserId[userIdCounter] = userId;
-                userIdCounter++;
-            }
-
-            FindMinimumTxns(new List<decimal>(balances), 0, new List<decimal[]>());
+            FindMinimumTxns(new List<(decimal, decimal)>(balances), 0, new List<decimal[]>());
             Console.WriteLine("Minimum Transaction Count: " + bestTransactions.Count);
             //PrintTransactions();
 
             return bestTransactions.Count;
         }
 
-        private void FindMinimumTxns(List<decimal> balances, int currentIndex, List<decimal[]> currentTransactions)
+        private void FindMinimumTxns(List<(decimal userId, decimal balance)> balances, int currentIndex, List<decimal[]> currentTransactions)
         {
             if (currentIndex >= balances.Count)
             {
@@ -165,7 +154,7 @@ namespace Services
                 return;
             }
 
-            decimal currentVal = balances[currentIndex];
+            decimal currentVal = balances[currentIndex].balance;
             if (currentVal == 0)
             {
                 FindMinimumTxns(balances, currentIndex + 1, currentTransactions);
@@ -174,20 +163,19 @@ namespace Services
 
             for (int txnIndex = currentIndex + 1; txnIndex < balances.Count; txnIndex++)
             {
-                decimal nextVal = balances[txnIndex];
+                decimal nextVal = balances[txnIndex].balance;
                 if (currentVal * nextVal < 0)
                 {
-                    balances[txnIndex] = currentVal + nextVal;
+                    balances[txnIndex] = (balances[txnIndex].userId, currentVal + nextVal);
 
-                    // currentIndex ve txnIndex'in aslında kullanıcı ID'leri olduğunu varsayarak
-                    decimal fromUserId = indexToUserId[currentIndex + 1];
-                    decimal toUserId = indexToUserId[txnIndex + 1];
+                    decimal fromUserId = balances[currentIndex].userId;
+                    decimal toUserId = balances[txnIndex].userId;
 
                     currentTransactions.Add(new decimal[] { fromUserId, toUserId, Math.Min(currentVal, -nextVal) });
 
                     FindMinimumTxns(balances, currentIndex + 1, currentTransactions);
 
-                    balances[txnIndex] = nextVal;
+                    balances[txnIndex] = (balances[txnIndex].userId, nextVal);
                     currentTransactions.RemoveAt(currentTransactions.Count - 1);
 
                     if (currentVal + nextVal == 0)
@@ -196,6 +184,18 @@ namespace Services
                     }
                 }
             }
+        }
+
+
+        public async Task PayDebtAsync(PayDebtDto payDebtDto)
+        {
+            Payment payment = CreatePayment(payDebtDto);
+            await _manager.Payment.CreatePaymentAsync(payment);
+            await _manager.SaveAsync();
+
+            PaymentParticipant participant = CreatePaymentParticipant(payment.ID, payDebtDto.CreditorUserID);
+            await _manager.PaymentParticipant.CreatePaymentParticipantAsync(participant);
+            await _manager.SaveAsync();
         }
 
         //private void PrintTransactions()
@@ -211,9 +211,31 @@ namespace Services
         //        Console.WriteLine($"From: {from}, To: {to}, Amount: {amount}");
         //    }
         //}
-        
+
         //son
 
+        private Payment CreatePayment(PayDebtDto payDebtDto)
+        {
+            return new Payment
+            {
+                PaidUserID = payDebtDto.DebtorUserID,
+                IsDebt = true,
+                VacationID = payDebtDto.VacationID,
+                PaidDateTime = DateTime.UtcNow,
+                Price = payDebtDto.Amount,
+                ProductDescription = string.Empty,
+                ProductName = string.Empty
+            };
+        }
+
+        private PaymentParticipant CreatePaymentParticipant(int paymentId, int creditorUserId)
+        {
+            return new PaymentParticipant
+            {
+                PaymentID = paymentId,
+                ParticipantUserID = creditorUserId
+            };
+        }
     }
 }
 

@@ -12,5 +12,6 @@ namespace Services.Contracts
         Task UpdateDeptAsync(Debt debt);
         Task DeleteDeptAsync(Debt debt);
         Task ControlAndSaveDebtAsync(int vacationID, List<PaymentReadDto> payments);
+        Task PayDebtAsync(PayDebtDto payDebtDto);
     }
 }
