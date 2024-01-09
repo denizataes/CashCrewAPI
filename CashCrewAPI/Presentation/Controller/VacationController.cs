@@ -23,7 +23,7 @@ namespace Presentation.Controller
             _manager = manager;
         }
 
-        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        //[ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost("CreateVacation")]
         [Authorize]
         public async Task<IActionResult> CreateVacationAsync([FromBody] VacationDto vacationDto)

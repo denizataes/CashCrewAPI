@@ -279,8 +279,6 @@ C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net
 C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\CashCrewAPI.AssemblyInfoInputs.cache
 C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\CashCrewAPI.AssemblyInfo.cs
 C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\CashCrewAPI.csproj.CoreCompileInputs.cache
-C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\CashCrewAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\CashCrewAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\staticwebassets\msbuild.CashCrewAPI.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.CashCrewAPI.props
 C:\Users\atae\Documents\GitHub\CashCrewAPI\CashCrewAPI\CashCrewAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CashCrewAPI.props

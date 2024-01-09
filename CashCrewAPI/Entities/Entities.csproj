@@ -23,7 +23,6 @@
     <Folder Include="Models\" />
     <Folder Include="ErrorModel\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="DataTransferObjects\" />
     <Folder Include="LogModel\" />
     <Folder Include="RequestFeatures\" />
     <Folder Include="DataTransferObjects\Login\" />

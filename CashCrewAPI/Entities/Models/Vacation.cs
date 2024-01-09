@@ -14,6 +14,7 @@ namespace Entities.Models
         public string Password { get; set; }
         public int CreatedUserID { get; set; }
         public DateTime CreatedDateTime { get; set; }
+        public ICollection<VacationUserAssociation> VacationUserAssociations { get; set; }
     }
 }
 

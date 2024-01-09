@@ -33,6 +33,9 @@ namespace WebApi.Utilities.AutoMapper
             CreateMap<Debt, DebtDto>();
             CreateMap<DebtDto, Debt>();
 
+            CreateMap<VacationUserAssociation, VacationUserAssociationDto>();
+            CreateMap<VacationUserAssociationDto, VacationUserAssociation>();
+
 
         }
     }

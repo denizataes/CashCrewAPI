@@ -23,7 +23,21 @@ namespace Repositories.EFCore
         public DbSet<Payment> Payment { get; set; }
         public DbSet<PaymentParticipant> PaymentParticipant { get; set; }
         public DbSet<Debt> Debt { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Vacation>()
+           .HasMany(v => v.VacationUserAssociations)
+           .WithOne()
+           .HasForeignKey(va => va.VacationID);
+
+            modelBuilder.Entity<VacationUserAssociation>()
+                .HasOne(va => va.User)
+                .WithMany()
+                .HasForeignKey(va => va.UserID);
+
+        }
     }
+
 
 }
 

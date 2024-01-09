@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Models;
+using System;
 namespace Entities.DataTransferObjects
 {
 	public record VacationDto
@@ -10,5 +11,6 @@ namespace Entities.DataTransferObjects
         public string Password { get; set; }
         public int CreatedUserID { get; set; }
         public DateTime CreatedDateTime { get; set; }
+        public ICollection<VacationUserAssociationDto> VacationUserAssociations { get; set; }
     }
 }

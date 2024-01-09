@@ -40,6 +40,8 @@ namespace Repositories.EFCore
 
         public async Task<List<Vacation>> GetVacationsByUserIdAsync(int userId) =>
        await FindByCondition(b => b.CreatedUserID.Equals(userId), false)
+            .Include(v => v.VacationUserAssociations)
+            .ThenInclude(va => va.User)
            .ToListAsync();
 
 

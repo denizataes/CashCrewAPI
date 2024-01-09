@@ -27,7 +27,10 @@ namespace Presentation.Controller
         [HttpPost("SignIn")]
         public async Task<LoginResponseModel> SignIn([FromBody] LoginDto loginDto)
         {
-            return await _manager.LoginService.LoginAsync(loginDto);
+            var loginResult = await _manager.LoginService.LoginAsync(loginDto);
+            if (loginResult.IsSuccess)
+                loginResult.User = await _manager.UserService.GetUserByUsernameAsync(loginDto.Username, false);
+            return loginResult;
         }
 
         [ServiceFilter(typeof(ValidationFilterAttribute))]
