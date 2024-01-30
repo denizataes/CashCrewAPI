@@ -221,7 +221,7 @@ namespace Services
                 PaidUserID = payDebtDto.DebtorUserID,
                 IsDebt = true,
                 VacationID = payDebtDto.VacationID,
-                PaidDateTime = DateTime.UtcNow,
+                PaidDateTime = DateTime.Now,
                 Price = payDebtDto.Amount,
                 ProductDescription = string.Empty,
                 ProductName = string.Empty

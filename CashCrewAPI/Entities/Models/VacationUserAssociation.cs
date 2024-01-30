@@ -9,7 +9,7 @@ namespace Entities.Models
         public int Id { get; set; }
         public int VacationID { get; set; }
         public int UserID { get; set; }
-        public User User { get; set; } 
+        public virtual User User { get; set; } 
     }
 
 }

@@ -38,11 +38,13 @@ namespace Repositories.EFCore
               FindByCondition(b => b.Description.Equals(description) && b.Title.Equals(title), trackChanges)
              .SingleOrDefault();
 
-        public async Task<List<Vacation>> GetVacationsByUserIdAsync(int userId) =>
-       await FindByCondition(b => b.CreatedUserID.Equals(userId), false)
-            .Include(v => v.VacationUserAssociations)
-            .ThenInclude(va => va.User)
-           .ToListAsync();
+        public async Task<List<Vacation>> GetVacationsByUserIdAsync(int userId)
+        {
+            return await FindByCondition(v => v.VacationUserAssociations.Any(va => va.UserID == userId), false)
+                .Include(v => v.VacationUserAssociations)
+                .ThenInclude(va => va.User)
+                .ToListAsync();
+        }
 
 
     }

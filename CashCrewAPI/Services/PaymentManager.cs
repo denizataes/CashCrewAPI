@@ -36,7 +36,7 @@ namespace Services
             {
 
                 await _manager.Payment.CreatePaymentAsync(entity);
-                var participantToRemove = entity.Participants.FirstOrDefault(p => p.ParticipantUserID.Equals(entity.PaidUserID));
+                var participantToRemove = entity.Participants.FirstOrDefault(p => p.Equals(entity.PaidUserID));
                 if (participantToRemove != null)
                 {
                     entity.Participants.Remove(participantToRemove);
